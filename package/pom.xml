@@ -74,26 +74,12 @@
 					<target>${java.version}</target>
 				</configuration>
 			</plugin>
-			<plugin>
-				<!-- Build an executable JAR -->
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-				<version>2.4</version>
-				<configuration>
-					<archive>
-						<manifest>
-							<addClasspath>true</addClasspath>
-							<classpathPrefix>com/chatley/magicbeans/</classpathPrefix>
-							<mainClass>com.chatley.magicbeans.PluginManager</mainClass>
-						</manifest>
-					</archive>
-				</configuration>
-			</plugin>
+
 			<plugin>
 				<artifactId>maven-dependency-plugin</artifactId>
 				<executions>
 					<execution>
-						<phase>install</phase>
+						<phase>prepare-package</phase>
 						<goals>
 							<goal>copy-dependencies</goal>
 						</goals>
@@ -104,7 +90,7 @@
 					</execution>
 					<execution>
 						<id>plugins</id>
-						<phase>install</phase>
+						<phase>prepare-package</phase>
 						<goals>
 							<goal>copy-dependencies</goal>
 						</goals>
@@ -115,19 +101,20 @@
 						</configuration>
 					</execution>
 					<execution>
-						<id>framework_and_examples</id>
-						<phase>install</phase>
+						<id>examples</id>
+						<phase>prepare-package</phase>
 						<goals>
 							<goal>copy-dependencies</goal>
 						</goals>
 						<configuration>
 							<stripVersion>true</stripVersion>
-							<includeArtifactIds>framework,examples</includeArtifactIds>
+							<includeArtifactIds>examples</includeArtifactIds>
 							<outputDirectory>${project.build.directory}</outputDirectory>
 						</configuration>
 					</execution>
 				</executions>
 			</plugin>
+			<!-- TODO put everything in a zip file -->
 		</plugins>
 	</build>
 </project>
