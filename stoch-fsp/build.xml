@@ -1,0 +1,56 @@
+<project name="stoch-fsp" default="deploy" basedir=".">
+	
+    <description>build probabilistic fsp backend</description>
+
+	<!-- set global properties for this build -->
+	<property name="src"   location="src"/>
+    <property name="build" location="bin"/>
+    <property name="dist"  location="dist"/>
+	
+	<path id="project.classpath">
+
+			<fileset dir="../ltsa/plugins">
+				<include name="**/*.jar"/>
+			</fileset>
+			
+			<fileset dir="../ltsa/lib">
+				<include name="**/*.jar"/>
+			</fileset>
+			<pathelement location="${bin}"/>
+			<fileset dir="${dist}">
+					<include name="**/*.jar"/>
+				</fileset>
+				<pathelement location="${bin}"/>
+		</path>
+	
+	<target name="init">
+   		<!-- Create the time stamp -->
+    	<tstamp/>
+ 	 </target>
+
+  <target name="deploy" >
+    <!-- Compile the java code from ${src} into ${build} -->
+  	
+  	<!--<ant antfile="../ltsa/build.xml" target="core" inheritall="false" />-->
+   
+	<delete file="../ltsa/plugins/backend.jar" /> 
+  	
+  	<javac  srcdir="${src}" destdir="${build}" >  
+  	   <classpath>
+  	    <pathelement location="../ltsa/bin"/>
+        <pathelement location="."/>
+      </classpath>
+  	</javac>
+  	<!--<jar jarfile="../ltsa/plugins/backend.jar" basedir="${build}" includes="ic/doc/ltsa/lts/* , ic/doc/ltsa/lts/ltl/* , ic/doc/simulation/sim/* , ic/doc/simulation/tools/* " />-->
+  	<jar jarfile="../ltsa/plugins/backend.jar" basedir="${build}" />	
+  </target>		
+  
+	<target name="clean">
+		<delete>	
+			<fileset dir="plugins">
+			</fileset>
+		</delete>
+	</target>
+	
+
+</project>

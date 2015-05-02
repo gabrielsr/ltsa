@@ -1,0 +1,25 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>ltsa</groupId>
+	<artifactId>ltsa-parent</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<modules>
+		<module>../ltsa</module>
+		<module>../mscplugin</module>
+		<module>../reliabilityplugin</module>
+		<module>../stoch-fsp</module>
+		<module>../package</module>
+	</modules>
+	
+	<distributionManagement>
+	  <repository>
+	    <id>bintray</id>
+	    <url>https://api.bintray.com/maven/lesunb/maven2/ltsa</url>
+	  </repository>
+	</distributionManagement>
+
+</project>

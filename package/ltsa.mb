@@ -1,0 +1,7 @@
+frameworkjar   = lib/framework.jar
+targetjar      = lib/ltsa.jar
+targetclass    = ic.doc.ltsa.frontend.HPWindow
+
+bindpolicy     = 1-1
+pollpluginsdir = false
+debug = false
