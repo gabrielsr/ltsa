@@ -15,7 +15,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>ltsa</groupId>
-			<artifactId>ltsa-core</artifactId>
+			<artifactId>ltsa</artifactId>
 			<version>1.0.0</version>
 		</dependency>
 		<dependency>
@@ -27,7 +27,12 @@
 			<groupId>ltsa</groupId>
 			<artifactId>framework</artifactId>
 			<version>12012005</version>
-		</dependency>	
+		</dependency>
+		<dependency>
+			<groupId>ltsa</groupId>
+			<artifactId>backend</artifactId>
+			<version>22042015</version>
+		</dependency>			
 		<dependency>
 			<groupId>ltsa</groupId>
 			<artifactId>mscplugin</artifactId>
@@ -93,7 +98,7 @@
 						</goals>
 						<configuration>
 							<stripVersion>true</stripVersion>
-							<includeArtifactIds>reliabilityplugin,ltsa,mscplugin </includeArtifactIds>
+							<includeArtifactIds>reliabilityplugin,mscplugin,backend</includeArtifactIds>
 							<outputDirectory>${project.build.directory}/plugins</outputDirectory>
 						</configuration>
 					</execution>

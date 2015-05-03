@@ -20,7 +20,7 @@
 		</dependency>
 		<dependency>
 			<groupId>ltsa</groupId>
-			<artifactId>ltsa-core</artifactId>
+			<artifactId>ltsa</artifactId>
 			<version>1.0.0</version>
 		</dependency>
 		<dependency>

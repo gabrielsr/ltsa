@@ -1,5 +1,6 @@
-cd les-ltsa-parent
+cd ltsa-parent
 mvn package
 cd ../package/target
 
-java -Xmx1024m -cp .:lib/framework.jar:lib/sun-xml.jar:lib/scenebeans.jar:lib/jel.jar:lib/jdom.jar com.chatley.magicbeans.PluginManager lib/framework.jar lib/ltsa.jar ic.doc.ltsa.HPWindow
+java -Xmx1024m -cp lib/framework.jar:lib/sun-xml.jar:lib/scenebeans.jar:lib/jel.jar:lib/jdom.jar: com.chatley.magicbeans.PluginManager ../ltsa.mb 
+
